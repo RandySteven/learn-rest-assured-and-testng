@@ -1,0 +1,8 @@
+tc,description,name,email,password,expected_response_code
+1,success to register user,User Test,user_test@gmail.com,test1234,201
+2,failed to register user name empty,,user_test@gmail.com,test1234,400
+3,failed to register user email empty,User Test,,test1234,400
+4,failed to register user pass empty,User Test,user_test@gmail.com,,400
+5,failed to register user email invalid format,User Test,usertest,test1234,400
+6,failed to register user pass < 8,User Test,usertest@gmail.com,test,400
+7,failed to register user pass > 16,User Test,usertest@gmail.com,test1234test12345,400

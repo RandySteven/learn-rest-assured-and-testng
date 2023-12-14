@@ -1,0 +1,20 @@
+- !!com.rest.assured.ApiTest
+  dataId: "NM_H_REGISTER_USER_001"
+  logicId: "NM_H_REGISTER_USER"
+  description: 'As a tester I want to test register user success'
+  dataItems:
+    userRequest:
+      name: "Randy Steven"
+      email: "randy.steven@gmail.com"
+      password: "test_1234"
+    expectedResponseCode: 201
+
+- !!com.rest.assured.ApiTest
+  dataId: NM_H_REGISTER_USER_002
+  logicId: NM_H_REGISTER_USER
+  description: 'As a tester I want to test register user failed user name is null'
+  dataItems:
+    userRequest:
+      email: "randy.steven@gmail.com"
+      password: "test_1234"
+    expectedResponseCode: 400
