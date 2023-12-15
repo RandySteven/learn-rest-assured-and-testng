@@ -1,24 +1,34 @@
 package com.rest.assured.api.users;
 
+import com.rest.assured.api.ApiAction;
+import com.rest.assured.common.CsvReader;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.DataProvider;
 
-public class UserApiAction extends RestAssured {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserApiAction.class);
+public class UserApiAction extends ApiAction {
 
-    private static final String REGISTER_PATH = "http://localhost:8080/v1/register";
+    private static final String REGISTER_PATH = "/v1/register";
+    private static final String LOGIN_PATH = "/v1/login";
 
     public static UserApiAction getInstance() {
         return new UserApiAction();
     }
-    public Response TestRegisterUser(String requestBodyStr) {
-        RequestSpecification requestSpecification1 = given();
-        Response response = requestSpecification1.body(requestBodyStr).request(Method.POST, REGISTER_PATH);
-        return response;
+    public Response registerUserAction(String requestBodyStr) {
+        return Post(REGISTER_PATH, requestBodyStr);
     }
+
+    public Response loginUserAction(String requestBodyStr) {
+        return Post(LOGIN_PATH, requestBodyStr);
+    }
+
 }
