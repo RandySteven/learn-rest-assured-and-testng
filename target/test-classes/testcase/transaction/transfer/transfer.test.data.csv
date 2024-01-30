@@ -1,0 +1,6 @@
+tc,description,to,amount,description,expected_response_code
+1,Success to transfer,"1000000000002","50000",,201
+2,Failed to transfer because prefix is not 100,"0000000002",50000,,400
+3,Failed to transfer because wallet to isnt invalid,"ERROR123",50000,,400
+4,Failed to transfer because amount isnt in numeric,"1000000000002",ERROR123,,400
+5,Failed to transfer due description is more than 35char,"1000000000002",50000,"123456712345671234567123456712345678",400

@@ -17,8 +17,8 @@ import java.util.Scanner;
 
 public class UserApiAction extends ApiAction {
 
-    private static final String REGISTER_PATH = "/v1/register";
-    private static final String LOGIN_PATH = "/v1/login";
+    private static final String REGISTER_PATH = "/auth/register";
+    private static final String LOGIN_PATH = "/auth/login";
 
     public static UserApiAction getInstance() {
         return new UserApiAction();

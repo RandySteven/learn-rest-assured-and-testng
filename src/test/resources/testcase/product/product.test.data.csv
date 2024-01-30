@@ -1,0 +1,2 @@
+tc,description,content,name,generic_name,description,manufacture_id,form_id,category_id,unit_in_pack,weight,height,width
+1,success create product,test product 1,Obat Test A,Meidcine A,test product A,1,1,1,bottle,1,2,1

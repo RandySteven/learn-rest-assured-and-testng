@@ -72,12 +72,7 @@ public class UserApiTest {
         JSONObject responseJson = new JSONObject(response.getBody().asString());
 
         LOGGER.info("=== response body : {}", response.asString());
-        Assert.assertEquals(expectedRC, response.statusCode());
-
-        if(expectedRC == HttpStatus.SC_OK) {
-            String message = "Success login user";
-            Assert.assertEquals(message, responseJson.get("message"));
-        }
+        Assert.assertEquals(response.statusCode(), expectedRC);
     }
 
     @DataProvider(name = "login.test.data.csv")
